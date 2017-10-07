@@ -13,7 +13,7 @@ var api = require('./api');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 8888);
+app.set('port', process.env.PORT || 8080);
 app.use(express.cookieParser());
 app.use(express.session({secret: "infles_rocks"}))//lol
 app.use(express.logger('dev'));
