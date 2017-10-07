@@ -5,7 +5,7 @@
 
 console.log("starting...");
 
-var express = require('./node_modules2/express/lib/express');
+var express = require('express');
 var http = require('http');
 var path = require('path');
 var api = require('./api');
