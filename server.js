@@ -8,7 +8,7 @@ console.log("starting...");
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var api = require('/opt/app-root/src/api');
+var api = require('./api');
 
 var app = express();
 
