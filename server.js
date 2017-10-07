@@ -6,6 +6,11 @@
 console.log("starting...");
 
 var express = require('express');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var morgan = require('morgan');
+var bodyParser = require('body-parser')
+var methodOverride = require('method-override');
 var http = require('http');
 var path = require('path');
 var api = require('./api');
@@ -13,13 +18,14 @@ var api = require('./api');
 var app = express();
 
 // all environments
-app.set('ipaddress', process.env.OPENSHIFT_NODEJS_IP);
-app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8888);
-app.use(express.cookieParser());
-app.use(express.session({secret: "infles_rocks"}))//lol
-app.use(express.logger('dev'));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
+self.ipadress = '0.0.0.0'
+self.port = 8080;
+//app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8888);
+//app.use(cookieParser());
+app.use(session({secret: "infles_rocks"}))//lol
+//app.use(morgan('dev'));
+//app.use(bodyParser.json());
+app.use(methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
