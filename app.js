@@ -14,6 +14,7 @@ var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 8080);
+app.set('ipaddress', '0.0.0.0');
 app.use(express.cookieParser());
 app.use(express.session({secret: "infles_rocks"}))//lol
 app.use(express.logger('dev'));
